@@ -1,5 +1,6 @@
 data/
 tilescache/
 it/
-
+__pycache__/
+cache/
 *.DS_Store
