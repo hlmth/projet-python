@@ -34,7 +34,7 @@ Nous n'avons pas pu produire de code pour cette partie par manque de donnée mai
 
 Les limites : 
 
-Pour réduire la complexité algorithmique, principalement de la création des graphes, nous nous sommes restreints à une analyse régionale. En effet, générer un graphe de la France entière est très gourmand. Or, nous utilisons le graphe pour calculer les itinéraires, mais surtout la distance routière entre un point A et un point B. Une amélioration évidente de notre projet serait de trouver un moyen plus léger de calculer ces distances et itinéraires afin de pouvoir travailler sur l'intégralité du territoire. 
+Nous n'avons pas réussi à faire fonctionner la fonction pour trouver les 10 stations les plus proches avec le module géopandas. Par ailleurs, pour réduire la complexité algorithmique, principalement de la création des graphes, nous nous sommes restreints à une analyse régionale. En effet, générer un graphe de la France entière est très gourmand. Or, nous utilisons le graphe pour calculer les itinéraires, mais surtout la distance routière entre un point A et un point B. Une amélioration évidente de notre projet serait de trouver un moyen plus léger de calculer ces distances et itinéraires afin de pouvoir travailler sur l'intégralité du territoire. 
 
 ### Les différents notebooks de notre projet :
 
