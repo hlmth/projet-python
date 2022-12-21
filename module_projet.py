@@ -78,5 +78,36 @@ def dix_plus_proche_card(df, posi, carb):
     new_df = data_1['geom'].apply(distancetoposi).sort_values().head(10)
     return data_1.loc[new_df.index.to_list()]
 
+### fonctions donnant itinéraires en Île-De-France
 
+def create_graph(loc, dist, transport_mode, loc_type="address"):
+###Transport mode = ‘walk’, ‘bike’, ‘drive’, ‘drive_service’, ‘all’, ‘all_private’, ‘none’
+    if loc_type == "address":
+        G = ox.graph_from_address(loc, dist=dist, network_type=transport_mode)
+    elif loc_type == "points":
+        G = ox.graph_from_point(loc, dist=dist, network_type=transport_mode )
+    return G
 
+G = create_graph("Ile de France", 50000, "drive")
+
+G = ox.add_edge_speeds(G) #Impute
+G = ox.add_edge_travel_times(G)
+G = ox.distance.add_edge_lengths(G) 
+
+def itinéraire(position, station): #attention il faut mettre (longitude, latitude)
+    a,b = position
+    x,y = station
+    start_node = ox.nearest_nodes(G, a,b)
+    end_node = ox.nearest_nodes(G, x,y) # Calculate the shortest path
+    route = nx.shortest_path(G, start_node, end_node, weight='length') #Plot the route and street networks
+    length = nx.shortest_path_length(G, source=start_node, target=end_node, weight='length', method="dijkstra")
+    return(route, length)
+
+def x_plus_proche(data, position, carb, nbr_stations):
+    data_1 = md.data_carb(data, carb, ['adresse', 'ville', 'prix_valeur', 'prix_nom', 'geom'])
+    pos = list(map(float,md.Adresse_to_gps(position).split(',')))
+    def iti(station):
+        pos_sta = list(map(float, station.split(',')))
+        return(itinéraire(pos, pos_sta)[1])
+    vector = data_1['geom'].apply(iti).sort_values().head(nbr_stations)
+    return(vector)
