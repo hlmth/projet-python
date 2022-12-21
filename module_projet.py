@@ -8,19 +8,10 @@ pd.options.mode.chained_assignment = None  # default='warn'
 
 
 ### Définition des dataframes avec leurs colonnes "utiles"
-def data_carb(df, carb):
-    data_1 = df[['adresse', 'ville', 'geom', 'prix_valeur', 'prix_nom']]
-    d = data_1[data_1.prix_nom == carb]
+def data_carb(df, carb, colonnes_utiles):
+    data_1 = df[df.prix_nom == carb]
+    d = data_1[colonnes_utiles]
     d.drop_duplicates(keep = 'first', inplace=True) 
-    #df.drop_duplicates(subset ="'column'", keep = 'first', inplace=True) si on veut supprimer selon une colonne
-    return d
-
-
-def data_carb_g(df, carb):
-    data_1 = df[['adresse', 'ville', 'prix_valeur', 'prix_nom', 'geometry']]
-    d = data_1[data_1.prix_nom == carb]
-    d.drop_duplicates(keep = 'first', inplace=True) 
-    #df.drop_duplicates(subset ="'column'", keep = 'first', inplace=True) si on veut supprimer selon une colonne
     return d
 
 ### Fonction pour passer de coordonnées GPS à une adresse et inversement
