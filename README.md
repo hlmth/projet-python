@@ -14,13 +14,13 @@ Tout d'abord nous avons fait une analyse visuelle des données à notre disposit
 2. dix plus proches stations avec geopanda :
 
 3. dix plus proches stations avec panda et une fonction de distance : (à justifier : c'est plus rapide qu'avec géopanda), 
-
-4. les itinéraires : 
-
-5. fonction pour la station la plus rentable : 
-
-Nous pouvons enfin ici travailler sur l'objectif principal du projet. En effet, dans cette partie, nous avons mis au point une fonction qui calcule le prix d'un plein en fonction du prix du carburant et de la distance de la station. C'est pas ce biais que nous avons pu obtenir le résultat éscompté d'afficher la station essence la plus rentable. 
  
+4. fonction pour la station la plus rentable : 
+
+Nous pouvons enfin ici travailler sur l'objectif principal du projet. En effet, dans cette partie, nous avons mis au point une fonction qui calcule le prix d'un plein en fonction du prix du carburant et de la distance de la station. C'est pas ce biais que nous avons pu obtenir le résultat éscompté, à savoir déterminer la station essence la plus rentable. Cette station la plus rentable l'est bien à condition que l'on calcule la distance réelle et non celle à vol d'oiseau. C'est pour cela, que nous avons utilisé des outils permettant de calculer des itinéraires ainsi que leurs longueurs.
+
+
+
 (voir si c'est le même résultat avec la méthode de 2. ou de 3. ) 6. modélisation (il faut vrmt trouver vite pour ça)
 
 Ce que nous avons fait :
