@@ -21,6 +21,11 @@ def Adresse_to_gps(Adresse) :
     location = geolocator.geocode(Adresse)
     return str(str(location.latitude) + ','+ str(location.longitude))
 
+def Adresse_to_gps2(Adresse) : 
+    geolocator = Nominatim(user_agent="arman.akgonul@ensae.fr")
+    location = geolocator.geocode(Adresse)
+    return str(str(location.longitude) + ','+ str(location.latitude))
+
 def Gps_to_adresse(coord):
     geolocator = Nominatim(user_agent="arman.akgonul@ensae.fr")
     location = geolocator.reverse(coord)
