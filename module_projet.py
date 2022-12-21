@@ -1,7 +1,7 @@
 
 import pandas as pd
 import geopandas as gpd
-
+from geopy.geocoders import Nominatim
 from math import sin, cos, acos, pi
   
 pd.options.mode.chained_assignment = None  # default='warn'
@@ -17,12 +17,12 @@ def data_carb(df, carb, colonnes_utiles):
 ### Fonction pour passer de coordonnées GPS à une adresse et inversement
 
 def Adresse_to_gps(Adresse) : 
-    geolocator = Nominatim(user_agent="Projet Python")
+    geolocator = Nominatim(user_agent="arman.akgonul@ensae.fr")
     location = geolocator.geocode(Adresse)
     return str(str(location.latitude) + ','+ str(location.longitude))
 
 def Gps_to_adresse(coord):
-    geolocator = Nominatim(user_agent="Projet Python")
+    geolocator = Nominatim(user_agent="arman.akgonul@ensae.fr")
     location = geolocator.reverse(coord)
     return location 
 
