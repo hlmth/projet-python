@@ -75,7 +75,7 @@ def distanceGPS(p1, p2):
 ### Fonctions finales 
 
 def dix_plus_proche_card(df, posi, carb):
-    data_1 = data_carb(df, carb, ['adresse', 'ville', 'geom', 'prix_valeur', 'prix_nom']).sort_values('prix_valeur')
+    data_1 = data_carb(df, carb, ['adresse', 'ville', 'geom', 'prix_valeur', 'prix_nom'])
     pos = list(map(float,Adresse_to_gps(posi).split(',')))
     def distancetoposi(p2):
         pos_carb = list(map(float, p2.split(',')))
