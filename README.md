@@ -19,9 +19,11 @@ Tout d'abord nous avons fait une analyse visuelle des données à notre disposit
 
 Nous pouvons enfin ici travailler sur l'objectif principal du projet. En effet, dans cette partie, nous avons mis au point une fonction qui calcule le prix d'un plein en fonction du prix du carburant et de la distance de la station. C'est pas ce biais que nous avons pu obtenir le résultat éscompté, à savoir déterminer la station essence la plus rentable. Cette station la plus rentable l'est bien à condition que l'on calcule la distance réelle et non celle à vol d'oiseau. C'est pour cela, que nous avons utilisé des outils permettant de calculer des itinéraires ainsi que leurs longueurs.
 
+(voir si c'est le même résultat avec la méthode de 2. ou de 3. ) 
 
+5. modélisation 
 
-(voir si c'est le même résultat avec la méthode de 2. ou de 3. ) 6. modélisation (il faut vrmt trouver vite pour ça)
+Nous n'avons pas pu produire de code pour cette partie par manque de donnée mais si l'application venait à être utilisée par le grand pubic, nous pourions au début proposer aux utilisateurs plusieurs choix de station ayant des caractéristiques de prix et de distance différentes pour créer une base de données. À partir de cette base, nous pourions alors faire une régression linéaire sur le prix et la distance pour élire les stations qui ont le meilleur rapport accessibilité par voie routière-prix et donc les conseiller à nos utilisateurs. 
 
 Ce que nous avons fait :
 
@@ -38,7 +40,6 @@ Module_projet : module regroupant l'ensemble des fonctions définient lors du pr
 1. Visualisation : Récupération des données ainsi que visiualisation des variables les plus utiles pour notre projet 
 2. iti (nom à changer) : essai de deuxième objectif avec géopanda
 3. intro : essai du second objectif avec panda 
-4. gpd (il faut enlever ce qui se recoupe entre 2. 3. et celui là) : affichage des itinéraires 
-5. Rentabilité : fonction pour trouver la station la plus rentable 
-6. il faut modéliser
+4. Rentabilité : fonction pour trouver la station la plus rentable, calcul d'itinéraire
+
 
